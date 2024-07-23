@@ -4,13 +4,13 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class GreetingConfig {
-    String receipient = "LinkedIn Learning Students";
+    String recipient = "LinkedIn Learning Students";
 
-    public String getReceipient() {
-        return receipient;
+    public String getRecipient() {
+        return recipient;
     }
 
-    public void setReceipient(String receipient) {
-        this.receipient = receipient;
+    public void setRecipient(String recipient) {
+        this.recipient = recipient;
     }
 }

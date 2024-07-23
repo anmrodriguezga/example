@@ -6,9 +6,12 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.jboss.logging.Logger;
 
 @Path("/greeting")
 public class Greeting {
+
+    private static final Logger LOG = Logger.getLogger(Class.class);
     GreetingConfig config;
     String confProp;
 
@@ -21,6 +24,7 @@ public class Greeting {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getGreeting() {
-        return "Hello " + confProp + config.getReceipient();
+        LOG.info("Starting application...");
+        return "Hello " + confProp + config.getRecipient();
     }
 }
