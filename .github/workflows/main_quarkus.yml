@@ -23,13 +23,16 @@ jobs:
           distribution: 'microsoft'
 
       - name: Build with Maven
-        run: mvn clean install -DskipTests
+        run: mvn clean install
+
+      - name: Pack Java with Maven
+        run: mvn package
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: '${{ github.workspace }}/target/example-1.0.0-SNAPSHOT.jar'
 
   deploy:
     runs-on: ubuntu-latest
